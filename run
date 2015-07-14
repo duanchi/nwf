@@ -1,0 +1,11 @@
+#!/bin/sh
+
+
+echo "Initialize Node Webkit..."
+
+alias nw="/Applications/nwjs.app/Contents/MacOS/nwjs"
+
+echo "Running NodeWebkit Framework..."
+
+nw `dirname $0`
+

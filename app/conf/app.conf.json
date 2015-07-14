@@ -1,0 +1,31 @@
+{
+    "appkey":   "test",
+    "node-module":  ["net", "url", "querystring", "path", "fs", "process"],
+    "application":  {
+        "bootstrap-file":   "bootstrap/bootstrap.js",
+        "plugin-path":      "plugins",
+        "library-path":     "library",
+        "modules":          ["index", "monitor", "dashboard", "login"],
+        "view":             {
+            "enabled":  true,
+            "engine":   "library/view/handlebars.view.lib.js",
+            "path":     "views",
+            "suffix":   ".view.html",
+            "display-type": "dom"
+        }
+    },
+    "routes":   [
+        {
+            "type":         "regex",
+            "match":        "\/(.*)\/(.*)\\?(\\d+)\/(.*)",
+            "module":       "Index",
+            "contoller":    "$1",
+            "action":       "$2",
+            "regex-map":    {
+                "$3":   "uid",
+                "$4":   "method"
+            }
+        }
+        
+    ]
+}
